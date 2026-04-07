@@ -20,6 +20,7 @@ func RevealProgress(actual, guess string) bool {
 	}
 
 	for i, c := range guess {
+		time.Sleep(time.Millisecond * 100)
 		letter := string(c)
 		if len(actualAsSlice) <= i {
 			if slices.Contains(actualAsSlice, letter) && slices.Contains(lettersLeft, letter) {
@@ -41,8 +42,6 @@ func RevealProgress(actual, guess string) bool {
 		} else {
 			color.PrintRed(letter)
 		}
-
-		time.Sleep(time.Millisecond * 100)
 	}
 
 	fmt.Println()

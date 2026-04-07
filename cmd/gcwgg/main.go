@@ -1,7 +1,18 @@
 package main
 
-import "github.com/Moritisimor/gcwgg/internal"
+import (
+	"math/rand"
+
+	"github.com/Moritisimor/EpsilonFetch/pkg/color"
+	"github.com/Moritisimor/gcwgg/internal"
+)
 
 func main() {
-	internal.GameLoop("Hyperactivity")
+	words, err := internal.ReadFileToLines("words.txt")
+	if err != nil {
+		color.PrintRedln("Error while reading file: " + err.Error())
+		return
+	}
+
+	internal.GameLoop(words[rand.Int31n(int32(len(words) - 1))])
 }
