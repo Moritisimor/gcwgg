@@ -1,0 +1,12 @@
+# Editor/IDE Specific stuff
+.vscode
+idea
+
+# Scripts of all sorts
+scripts
+
+# Binary stuff
+*.exe
+*.dll
+*.a
+*.o
