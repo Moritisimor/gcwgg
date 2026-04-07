@@ -2,25 +2,25 @@ package internal
 
 import (
 	"bufio"
-	"fmt"
 	"os"
 	"strings"
+
+	"github.com/Moritisimor/EpsilonFetch/pkg/color"
 )
 
 func GameLoop(toGuess string) {
 	reader := bufio.NewReader(os.Stdin)
 	for {
+		color.PrintBlue("Enter your guess: ")
 		input, err := reader.ReadString('\n')
 		if err != nil {
-			fmt.Println("Error while reading input: " + err.Error())
+			color.PrintRedln("Error while reading input: " + err.Error())
 		}
 
 		input = strings.TrimSuffix(input, "\n")
-		if input == toGuess {
-			fmt.Println("You win!")
+		if RevealProgress(toGuess, input) {
+			color.PrintGreenln("You win!")
 			return
-		} else {
-			fmt.Println("You lose!")
 		}
 	}
 }
