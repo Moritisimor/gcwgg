@@ -12,6 +12,13 @@ import (
 func GameLoop(toGuess string) {
 	reader := bufio.NewReader(os.Stdin)
 	attempts := 0
+	fmt.Printf(
+		"%s %d %s",
+		"The word is",
+		len(toGuess),
+		"letters long\n",
+	)
+	
 	for {
 		attempts++
 		color.PrintBlue("Enter your guess: ")
