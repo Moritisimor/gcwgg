@@ -14,3 +14,5 @@ cd gcwgg
 go build -ldflags="-s -w" cmd/gcwgg/main.go
 ./main
 ```
+
+Many thanks to [this site](https://texttools.org/random-word-generator) for generating random words for me.
