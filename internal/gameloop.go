@@ -18,20 +18,33 @@ func GameLoop(toGuess string) {
 		len(toGuess),
 		"letters long\n",
 	)
-	
+
 	for {
 		attempts++
 		color.PrintBlue("Enter your guess: ")
 		input, err := reader.ReadString('\n')
 		if err != nil {
 			color.PrintRedln("Error while reading input: " + err.Error())
+			return
 		}
 
 		input = strings.TrimSuffix(input, "\n")
 		if RevealLexicalProximity(toGuess, input) {
 			color.PrintGreenln("You win!")
 			color.PrintMagentaln(fmt.Sprintf("Solved in %d tries", attempts))
-			return
+
+			color.PrintBlue("Play again? [Y/n]: ")
+			input, err = reader.ReadString('\n')
+			if err != nil {
+				color.PrintRedln("Error while reading input: " + err.Error())
+				return
+			}
+
+			if strings.ToLower(strings.TrimSuffix(input, "\n")) == "y" {
+				continue
+			}
+
+			break
 		}
 	}
 }
