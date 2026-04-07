@@ -10,7 +10,6 @@ import (
 )
 
 func GameLoop(toGuess string) {
-	fmt.Println(toGuess)
 	reader := bufio.NewReader(os.Stdin)
 	attempts := 0
 	for {
