@@ -10,6 +10,7 @@ import (
 )
 
 func GameLoop(toGuess string) {
+	fmt.Println(toGuess)
 	reader := bufio.NewReader(os.Stdin)
 	attempts := 0
 	for {
@@ -21,7 +22,7 @@ func GameLoop(toGuess string) {
 		}
 
 		input = strings.TrimSuffix(input, "\n")
-		if RevealProgress(toGuess, input) {
+		if RevealLexicalProximity(toGuess, input) {
 			color.PrintGreenln("You win!")
 			color.PrintMagentaln(fmt.Sprintf("Solved in %d tries", attempts))
 			return
