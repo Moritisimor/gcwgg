@@ -1,5 +1,7 @@
 package main
 
+import "github.com/Moritisimor/gcwgg/internal"
+
 func main() {
-	println("Implementation coming soon")
+	internal.GameLoop("Hello")
 }
