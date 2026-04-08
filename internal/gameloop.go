@@ -16,7 +16,7 @@ func GameLoop(toGuess string) {
 	fmt.Printf(
 		"%s %s %s",
 		color.SprintBlue("The word is"),
-		strconv.FormatInt(int64(len(toGuess)), 10),
+		color.SprintGreen(strconv.FormatInt(int64(len(toGuess)), 10)),
 		color.SprintBlue("letters long\n"),
 	)
 
