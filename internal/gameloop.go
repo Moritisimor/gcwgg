@@ -3,15 +3,13 @@ package internal
 import (
 	"bufio"
 	"fmt"
-	"os"
 	"strconv"
 	"strings"
 
 	"github.com/Moritisimor/EpsilonFetch/pkg/color"
 )
 
-func GameLoop(toGuess string) {
-	reader := bufio.NewReader(os.Stdin)
+func GameLoop(toGuess string, reader *bufio.Reader) {
 	attempts := 0
 	fmt.Printf(
 		"%s %s %s",
@@ -33,18 +31,6 @@ func GameLoop(toGuess string) {
 		if RevealLexicalProximity(toGuess, input) {
 			color.PrintGreenln("You win!")
 			color.PrintMagentaln(fmt.Sprintf("Solved in %d tries", attempts))
-
-			color.PrintBlue("Play again? [Y/n]: ")
-			input, err = reader.ReadString('\n')
-			if err != nil {
-				color.PrintRedln("Error while reading input: " + err.Error())
-				return
-			}
-
-			if strings.ToLower(strings.TrimSuffix(input, "\n")) == "y" {
-				continue
-			}
-
 			break
 		}
 	}

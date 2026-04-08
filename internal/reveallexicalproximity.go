@@ -3,7 +3,6 @@ package internal
 import (
 	"fmt"
 	"sync"
-	"time"
 
 	"github.com/Moritisimor/EpsilonFetch/pkg/color"
 )
@@ -53,7 +52,6 @@ func RevealLexicalProximity(actual, guess string) bool {
 	}
 
 	for _, c := range guessAsSlice {
-		time.Sleep(time.Millisecond * 100)
 		fmt.Print(c)
 	}
 
