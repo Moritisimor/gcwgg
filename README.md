@@ -26,5 +26,10 @@ The second way works by giving the program a CLI arg with the path to the file.
 
 If the file is not found it will report the error back to you and fall back to the pre-programmed words.
 
+## Gameplay
+Here is some professional gameplay
+
+![Gameplay](screenshots/gameplay.png)
+
 ## Credits
 Many thanks to [this site](https://texttools.org/random-word-generator) for generating random words for me.
