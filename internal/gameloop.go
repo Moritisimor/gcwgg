@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
 
 	"github.com/Moritisimor/EpsilonFetch/pkg/color"
@@ -13,10 +14,10 @@ func GameLoop(toGuess string) {
 	reader := bufio.NewReader(os.Stdin)
 	attempts := 0
 	fmt.Printf(
-		"%s %d %s",
-		"The word is",
-		len(toGuess),
-		"letters long\n",
+		"%s %s %s",
+		color.SprintBlue("The word is"),
+		strconv.FormatInt(int64(len(toGuess)), 10),
+		color.SprintBlue("letters long\n"),
 	)
 
 	for {
