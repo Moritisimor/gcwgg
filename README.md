@@ -7,7 +7,7 @@ This is a simple CLI Word Guessing Game inspired by hangman. It is written in Go
 ## Why did you make this?
 I was bored.
 
-## Compilation
+## Compilation & Execution
 ```bash
 git clone https://github.com/Moritisimor/gcwgg
 cd gcwgg
